@@ -1,6 +1,14 @@
-# 原作者项目链接
-https://gitcode.com/gh_mirrors/al/AlphaZero_Gomoku/?utm_source=outstanding_ugc_gitcode&index=top&type=card&webUrl=
+# 项目说明
+独立的传统五子棋.py 是用GPT写的人机对战（函数里的ai代表机器，不是人工智能）
 
+# 原作者项目链接
+## gitcode免VPN
+https://gitcode.com/gh_mirrors/al/AlphaZero_Gomoku/?utm_source=outstanding_ugc_gitcode&index=top&type=card&webUrl=
+## 知乎中文说明
+https://zhuanlan.zhihu.com/p/32089487
+
+## qita
+# 以下是神经网络五子棋原作者的readme
 ## AlphaZero-Gomoku
 This is an implementation of the AlphaZero algorithm for playing the simple board game Gomoku (also called Gobang or Five in a Row) from pure self-play training. The game Gomoku is much simpler than Go or chess, so that we can focus on the training scheme of AlphaZero and obtain a pretty good AI model on a single PC in a few hours. 
 
