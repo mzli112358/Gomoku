@@ -43,7 +43,7 @@ def print_board(board, last_move=None):
     
     print("      ", end="")
     for i in range(8):
-        print(f" {i} ", end="")
+        print(f"{i}   ", end="")
     print("\n")
 
 # 判断是否获胜
