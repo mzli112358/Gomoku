@@ -1,14 +1,107 @@
-# 项目说明
-独立的传统五子棋.py 是用GPT写的人机对战（函数里的ai代表机器，不是人工智能）
+# ML Proj
+`DS4023_Machine Learning Project.pdf`好像没什么要求，尼古拉斯班有5个simple，可以看看。
 
-# 原作者项目链接
-## gitcode免VPN
-https://gitcode.com/gh_mirrors/al/AlphaZero_Gomoku/?utm_source=outstanding_ugc_gitcode&index=top&type=card&webUrl=
-## 知乎中文说明
+simple2是井字棋，推广做五子棋不错。
+
+# 项目说明
+```
+Gomoku文件树/
+├── README.md
+├── rule system old method/  # GPT写的老方法
+│   ├── gpt-4o generated.py  # 特征就是if else堆出来的算法
+├── 别的班的simple/
+│   ├── sample2.pdf
+└── neural network new method/  # 一个神经网络五子棋开源项目，叫AlphaZero_Gomoku-master
+    ├── best_policy_6_6_4.model
+    ├── game.py
+    ├── human_play.py
+    ├── mcts_alphaZero.py
+    ├── mcts_pure.py
+    ├── playout400.gif
+    ├── policy_value_net.py
+    ├── policy_value_net_keras.py
+    ├── policy_value_net_numpy.py
+    ├── policy_value_net_pytorch.py
+    ├── policy_value_net_tensorflow.py
+    ├── train.py
+    └── 最初的作者开源的版本AlphaZero_Gomoku-master.zip
+```
+
+# 运行方式
+```
+终端打开子文件夹，输入
+python gpt-4o generated.py
+或者
+python human_play.py
+(也有可能是python3 xxx)
+```
+
+
+# 开源的NN模型作者宋俊潇项目链接
+```
+他这个神经网络模型的函数焦，PolicyValueNet策略价值网路模型
+gitcode免VPN
+https://gitcode.com/gh_mirrors/al/AlphaZero_Gomoku
+GitHub
+https://github.com/junxiaosong/AlphaZero_Gomoku
+知乎中文说明
 https://zhuanlan.zhihu.com/p/32089487
 
-## qita
-# 以下是神经网络五子棋原作者的readme
+该策略价值网络主要由以下几个部分组成：
+输入层：接收当前棋盘状态，形状为 (4, board_width, board_height)。
+公共卷积层：由三个卷积层组成，用于提取棋盘特征。
+第一个卷积层：32 个卷积核，核大小为 3x3，填充为 1，激活函数为 ReLU。
+第二个卷积层：64 个卷积核，核大小为 3x3，填充为 1，激活函数为 ReLU。
+第三个卷积层：128 个卷积核，核大小为 3x3，填充为 1，激活函数为 ReLU。
+动作策略层：
+卷积层：4 个卷积核，核大小为 1x1，激活函数为 ReLU。
+全连接层：输出大小为 board_width * board_height，激活函数为 softmax，用于输出每个动作的概率。
+状态价值层：
+卷积层：2 个卷积核，核大小为 1x1，激活函数为 ReLU。
+全连接层：输出大小为 64，激活函数为 ReLU。
+全连接层：输出大小为 1，激活函数为 tanh，用于输出当前状态的价值。
+
+```
+```mermaid
+graph LR
+    classDef startend fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px
+    classDef process fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    classDef decision fill:#FFF6CC,stroke:#FFBC52,stroke-width:2px
+    
+    A([输入层]):::startend -->|4通道| B(卷积层1):::process
+    B -->|32通道| C(卷积层2):::process
+    C -->|64通道| D(卷积层3):::process
+    
+    D -->|128通道| E(动作策略卷积层):::process
+    E -->|4通道| F(动作策略全连接层):::process
+    F -->|board_width * board_height| G(动作概率输出):::startend
+    
+    D -->|128通道| H(状态价值卷积层):::process
+    H -->|2通道| I(状态价值全连接层1):::process
+    I -->|64单元| J(状态价值全连接层2):::process
+    J -->|1单元| K(状态得分输出):::startend
+    
+    style A fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px
+    style B fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style C fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style D fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style E fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style F fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style G fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px
+    style H fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style I fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style J fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    style K fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px
+```
+## 其他参考资料，与这个仓库无关
+```
+另一个人的开源
+https://gitcode.com/gh_mirrors/ti/Tic-Tac-Toe-AI
+他的个人页说明
+https://mostafa-samir.github.io/Tic-Tac-Toe-AI/
+```
+
+# 以下是开源的NN模型作者宋俊潇项目的readme
 ## AlphaZero-Gomoku
 This is an implementation of the AlphaZero algorithm for playing the simple board game Gomoku (also called Gobang or Five in a Row) from pure self-play training. The game Gomoku is much simpler than Go or chess, so that we can focus on the training scheme of AlphaZero and obtain a pretty good AI model on a single PC in a few hours. 
 
@@ -22,6 +115,8 @@ References:
 ### Example Games Between Trained Models
 - Each move with 400 MCTS playouts:  
 ![playout400](https://raw.githubusercontent.com/junxiaosong/AlphaZero_Gomoku/master/playout400.gif)
+
+这里有个动图在neural network new method\playout400.gif
 
 ### Requirements
 To play with the trained AI models, only need:
