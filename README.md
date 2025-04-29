@@ -29,11 +29,14 @@ Gomoku文件树/
 
 # 运行方式
 ```
-终端打开子文件夹，输入
-python gpt-4o generated.py
-或者
-python human_play.py
-(也有可能是python3 xxx)
+conda activate base
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+pip uninstall gomoku-alphazero
+pip install -e .
+python -m gomoku_alphazero.train
+cd gomoku_alphazero
+python train.py
 ```
 
 
