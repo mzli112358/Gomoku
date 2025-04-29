@@ -55,6 +55,7 @@ class Config:
         self.num_simulations = 400   # 加深搜索
         self.c_puct = 1.5            # 适度探索
         self.temp_threshold = 15
+        self.mcts_threads = 8  # 根据CPU核心数量调整
         
         # 自我对弈配置
         self.num_self_play = 200     # 更多数据
@@ -63,7 +64,8 @@ class Config:
         self.checkpoint_freq = 5     # 减少保存频率
         
         # 其他配置
-        self.self_play_progress = True
+        self.self_play_progress = False  # 关闭进度条以减少阻塞
+        #self.self_play_progress = True
         self.enable_visualization = False  # 关闭可视化加速训练
 '''
 ```

@@ -2,6 +2,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+def predict_batch(self, states):
+    """批量预测策略和价值"""
+    with torch.no_grad():
+        states_tensor = torch.FloatTensor(np.stack(states))
+        if self.config.use_gpu:
+            states_tensor = states_tensor.cuda()
+        policies, values = self.forward(states_tensor)
+        return policies.cpu().numpy(), values.cpu().numpy()
+    
 class ResidualBlock(nn.Module):
     def __init__(self, channels):
         super(ResidualBlock, self).__init__()

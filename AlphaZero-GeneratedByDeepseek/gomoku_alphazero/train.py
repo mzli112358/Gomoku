@@ -62,8 +62,10 @@ def main():
 
         # 自我对弈
         logger.info(f"开始 {config.num_self_play} 局自我对弈...")
-        examples = trainer.self_play(config.num_self_play)
-        
+        #examples = trainer.self_play(config.num_self_play)
+        # 修改 Trainer.self_play() 的调用方式，禁用tqdm进度条
+        examples = trainer.self_play(config.num_self_play, show_progress=False)
+
         # 训练神经网络
         logger.info("训练神经网络...")
         loss = trainer.train()

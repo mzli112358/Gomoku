@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import math
 
@@ -26,7 +27,24 @@ class MCTS:
         self.model = model
         self.config = config
         self.root = MCTSNode()
+        self.executor = ThreadPoolExecutor(max_workers=config.mcts_threads)
+    
+    def parallel_simulate(self, sim_board, node):
+        """并行化的模拟函数"""
+        # 选择阶段
+        while node.expanded():
+            action, node = self.select_child(node)
+            sim_board.play_action(action)
         
+        # 扩展阶段
+        if not sim_board.is_terminal():
+            policy, value = self.model.predict(sim_board.get_state())
+            self.expand_node(node, sim_board.legal_actions(), policy)
+        else:
+            value = sim_board.get_result()
+        
+        # 返回回溯路径
+        return node, value
     # 在mcts/mcts.py中添加以下方法
     def action_to_index(self, action):
         """将动作(行, 列)转换为策略向量索引"""
@@ -34,29 +52,23 @@ class MCTS:
         return row * self.config.board_size + col
         
     def search(self, board):
-        """执行MCTS搜索"""
+        """多线程MCTS搜索"""
+        futures = []
         for _ in range(self.config.num_simulations):
-            node = self.root
-            sim_board = board.copy()  # 现在可以使用copy()方法了
-            
-            # ... 保持其余搜索逻辑不变 ...
-            
-            # 选择阶段
-            while node.expanded():
-                action, node = self.select_child(node)
-                sim_board.play_action(action)
-            
-            # 扩展阶段
-            if not sim_board.is_terminal():
-                policy, value = self.model.predict(sim_board.get_state())
-                self.expand_node(node, sim_board.legal_actions(), policy)
-            else:
-                value = sim_board.get_result()
-            
-            # 回溯阶段
+            # 每个线程使用独立的棋盘副本
+            sim_board = board.copy()
+            future = self.executor.submit(
+                self.parallel_simulate, 
+                sim_board, 
+                self.root
+            )
+            futures.append(future)
+        
+        # 等待所有线程完成并回溯
+        for future in futures:
+            node, value = future.result()
             self.backup(node, value)
         
-        # 返回根节点的访问计数
         return {action: child.visit_count 
                 for action, child in self.root.children.items()}
     

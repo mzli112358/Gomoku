@@ -37,54 +37,37 @@ class Trainer:
             logger.info("Using CPU for training")
             
         self.model.to(self.device)
-    
-    def self_play(self, num_games):
-        """自我对弈生成数据（完整修正版）"""
-        examples = []
         
-        for _ in tqdm(range(num_games), desc="Self Play", unit="game"):
+        # 新增：初始化用于训练的MCTS实例
+        self.mcts = MCTS(model, config)  # 用于评估时的单次搜索
+    
+    def self_play(self, num_games, show_progress=False):
+        examples = []
+        for _ in tqdm(range(num_games), desc="Self Play", unit="game", disable=not self.config.self_play_progress):
             board = GomokuBoard(self.config.board_size, self.config.win_count)
-            mcts = MCTS(self.model, self.config)
+            mcts = self.mcts  # 使用预先初始化的MCTS实例
             game_history = []
             step = 0
-            
             while not board.is_terminal():
                 step += 1
-                # 应用温度参数：前N步高温探索，后续贪婪
                 temp = 1.0 if step <= self.config.temp_threshold else 0.0
                 actions, probs = mcts.get_action_probs(board, temp)
-                
-                # 关键检查：确保动作和概率长度一致
                 assert len(actions) == len(probs), \
                     f"动作和概率长度不一致！actions:{len(actions)}, probs:{len(probs)}"
-                
-                # 记录当前状态和策略
                 game_history.append((
-                    board.get_state(),  # 当前棋盘状态
-                    np.array(probs, dtype=np.float32),  # 当前策略分布
-                    board.current_player  # 当前玩家
+                    board.get_state(),  
+                    np.array(probs, dtype=np.float32),  
+                    board.current_player  
                 ))
-                
-                # 按概率选择动作
                 action_idx = np.random.choice(len(actions), p=probs)
                 action = actions[action_idx]
-                
-                # 执行动作并更新MCTS根节点
                 board.play_action(action)
                 mcts.update_root(action)
-            
-            # 处理游戏结果
-            final_result = board.get_result()  # 最终结果（当前玩家视角）
-            
-            # 为每个历史状态分配结果
+            final_result = board.get_result()  
             for state, probs, player in game_history:
-                # 结果需要从该状态的玩家视角计算
                 value = final_result if (player == board.current_player) else -final_result
                 examples.append((state, probs, float(value)))
-            
-            # 将本局数据加入缓冲区
             self.buffer.extend(examples)
-        
         return examples
     
     def train(self):
