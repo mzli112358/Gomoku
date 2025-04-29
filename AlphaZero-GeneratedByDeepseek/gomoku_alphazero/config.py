@@ -46,16 +46,16 @@ class Config:
         self.num_filters = 128       # 提升特征提取能力
         
         # 训练配置
-        self.batch_size = 128 if self.use_gpu else 32  # 适当增大batch
+        self.batch_size = 256 if self.use_gpu else 32  # 适当增大batch
         self.epochs = 30             # 延长训练轮次
         self.learning_rate = 0.002   # 更稳定的学习率
         self.l2_const = 1e-4
         
         # MCTS配置
-        self.num_simulations = 400   # 加深搜索
+        self.num_simulations = 600   # 加深搜索
         self.c_puct = 1.5            # 适度探索
         self.temp_threshold = 15
-        self.mcts_threads = 8  # 根据CPU核心数量调整
+        self.mcts_threads = 16  # 根据CPU核心数量调整
         
         # 自我对弈配置
         self.num_self_play = 200     # 更多数据
@@ -64,8 +64,8 @@ class Config:
         self.checkpoint_freq = 5     # 减少保存频率
         
         # 其他配置
-        self.self_play_progress = False  # 关闭进度条以减少阻塞
-        #self.self_play_progress = True
+        #self.self_play_progress = False  # 关闭进度条以减少阻塞
+        self.self_play_progress = True
         self.enable_visualization = False  # 关闭可视化加速训练
 '''
 ```
