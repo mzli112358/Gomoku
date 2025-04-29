@@ -1,3 +1,17 @@
+# 运行方式
+```
+conda activate base
+pip install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install -r requirements.txt
+pip uninstall gomoku-alphazero
+pip install -e .
+python -m gomoku_alphazero.train
+cd gomoku_alphazero
+python train.py
+python play.py
+```
+
+# 文件树
 ```
 gomoku_alphazero/
 ├── config.py

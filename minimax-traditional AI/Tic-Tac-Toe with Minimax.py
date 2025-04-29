@@ -1,3 +1,6 @@
+# Tic-Tac-Toe with Minimax
+# 井字棋游戏，使用Minimax算法实现
+
 import sys
 
 # 初始化棋盘

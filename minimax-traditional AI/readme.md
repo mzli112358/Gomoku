@@ -1,92 +1,51 @@
-# 这个文件夹是用传统 Minimax写的五子棋
-# 编译
-g++ -std=c++17 -pthread -DDEBUG_MODE=1 gobang.cpp -o gobang
-# 运行
-./gobang
+# 五子棋（基于Minimax算法）
+这是一个使用传统Minimax算法（带α-β剪枝）实现的五子棋AI程序。
 
+## 功能特点
+- 采用Minimax算法核心，结合α-β剪枝优化
+- 多线程搜索提升性能
+- 可配置的搜索深度
+- 调试模式支持
+- 终端界面交互
+
+## 编译方法
+```bash
+g++ -std=c++17 -pthread -DDEBUG_MODE=1 gobang.cpp -o gobang
+```
+
+## 运行游戏
+```bash
+./gobang
+```
+
+### 参数说明
+- `-DDEBUG_MODE=1`：启用调试输出（正式游玩时可移除）
+- 修改源代码中的`MAX_DEPTH`可调整AI难度（值越大AI越强但速度越慢）
+
+## 游戏规则
+1. 在15×15棋盘上进行
+2. 玩家(X)和AI(O)轮流落子
+3. 先形成五子连线（横、竖、斜）者胜
+4. 输入坐标下子（如"7 7"表示棋盘中心）
+
+## SSH访问信息（特定部署环境）
+```
 蓝易云SSH
 https://ssh.tsyvps.com/
-115.190.13.176
-22
-root
-
-root@lmz:~# g++ -std=c++17 -pthread -DDEBUG_MODE=1 gobang.cpp -o gobang
-root@lmz:~# ./gobang 
-
-nano  gobang.cpp
-ctrl + x 保存退出
-
-
-
-
-
-
-# Gomoku AI with Minimax Algorithm
-
-This is a Gomoku (Five in a Row) implementation using the traditional Minimax algorithm with alpha-beta pruning for AI decision making.
-
-## Features
-- Traditional Minimax algorithm with alpha-beta pruning
-- Multi-threaded search for better performance
-- Configurable search depth
-- Debug mode for development
-- Terminal-based interface
-
-## Requirements
-- C++17 compatible compiler
-- Linux/Unix environment (tested on Ubuntu)
-
-## Compilation
-```bash
-g++ -std=c++17 -pthread -DDEBUG_MODE=1 gobang.cpp -o gobang
+主机: 115.190.13.176
+端口: 22
+用户名: root
 ```
 
-## Usage
-```bash
-./gobang
-```
-
-### Options
-- `-DDEBUG_MODE=1`: Enables debug output (remove for cleaner gameplay)
-- Adjust `MAX_DEPTH` in source code to change AI difficulty (higher = stronger but slower)
-
-## Game Instructions
-1. The game is played on a 15x15 board
-2. Players alternate placing their pieces (X for human, O for AI)
-3. First to get 5 in a row (horizontally, vertically or diagonally) wins
-4. Input moves as coordinates (e.g., "7 7" for center)
-
-## SSH Access (for specific deployment)
-```
-Host: 115.190.13.176
-Port: 22
-Username: root
-```
-
-## Customization
-Edit `gobang.cpp` with nano:
+## 自定义修改
+使用nano编辑源代码：
 ```bash
 nano gobang.cpp
 ```
-Press Ctrl+X to save and exit after editing.
+编辑完成后按Ctrl+X保存退出
 
-## Future Improvements
-- Add heuristic evaluation improvements
-- Implement opening book
-- Add GUI interface
-- Optimize search algorithm
-
-## License
-[MIT](LICENSE) (add license file if needed)
-```
-
-This README provides:
-1. Basic project description
-2. Compilation instructions
-3. Usage information
-4. Game rules
-5. SSH access details
-6. Customization notes
-7. Future improvement ideas
-
-You can modify it further based on your specific implementation details or additional features you've included in your code.
+## 优化方向
+- 改进评估函数启发式
+- 添加开局库
+- 开发图形界面
+- 优化搜索算法
