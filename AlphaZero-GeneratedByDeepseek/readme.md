@@ -5,7 +5,7 @@ pip install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/si
 pip install -r requirements.txt
 pip uninstall gomoku-alphazero
 pip install -e .
-python -m gomoku_alphazero.train
+运行前注意修改config参数
 cd gomoku_alphazero
 python train.py
 python play.py
