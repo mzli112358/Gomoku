@@ -1,23 +1,20 @@
-# -*- coding: utf-8 -*-
+# -_- coding: utf-8 -_-
 """
 AlphaZero风格的蒙特卡洛树搜索实现，结合神经网络策略价值网络引导搜索
-
 作者：Junxiao Song，中文注释整理
 """
-
 import numpy as np
 import copy
 import math
+from config import config
 
 def softmax(x):
     probs = np.exp(x - np.max(x))
     probs /= np.sum(probs)
     return probs
 
-
 class TreeNode:
     """蒙特卡洛树搜索节点"""
-
     def __init__(self, parent, prior_p):
         self._parent = parent
         self._children = {}  # action -> TreeNode
@@ -60,11 +57,9 @@ class TreeNode:
     def is_root(self):
         return self._parent is None
 
-
 class MCTS:
     """蒙特卡洛树搜索主类"""
-
-    def __init__(self, policy_value_fn, c_puct=5, n_playout=400):
+    def __init__(self, policy_value_fn, c_puct=None, n_playout=None):
         """
         policy_value_fn: 输入棋盘状态，输出(action, prob)元组列表及估值[-1,1]
         c_puct: 调节探索权重
@@ -72,8 +67,8 @@ class MCTS:
         """
         self._root = TreeNode(None, 1.0)
         self._policy = policy_value_fn
-        self._c_puct = c_puct
-        self._n_playout = n_playout
+        self._c_puct = c_puct if c_puct is not None else config.c_puct
+        self._n_playout = n_playout if n_playout is not None else config.n_playout
 
     def _playout(self, state):
         """从根节点到叶节点进行一次模拟"""
@@ -83,9 +78,7 @@ class MCTS:
                 break
             action, node = node.select(self._c_puct)
             state.do_move(action)
-
         action_probs, leaf_value = self._policy(state)
-
         end, winner = state.game_end()
         if not end:
             node.expand(action_probs)
@@ -94,7 +87,6 @@ class MCTS:
                 leaf_value = 0.0
             else:
                 leaf_value = 1.0 if winner == state.get_current_player() else -1.0
-
         # 反向传播价值
         node.update_recursive(-leaf_value)
 
@@ -103,11 +95,9 @@ class MCTS:
         for _ in range(self._n_playout):
             state_copy = copy.deepcopy(state)
             self._playout(state_copy)
-
         act_visits = [(act, node._n_visits) for act, node in self._root._children.items()]
         if not act_visits:
             return [], []
-
         acts, visits = zip(*act_visits)
         act_probs = softmax(1.0 / temp * np.log(np.array(visits) + 1e-10))
         return acts, act_probs
@@ -123,14 +113,23 @@ class MCTS:
     def __str__(self):
         return "MCTS"
 
-
 class MCTSPlayer:
     """基于MCTS的AI玩家"""
-
     def __init__(self, policy_value_function,
-                 c_puct=5, n_playout=400, is_selfplay=False):
+                 c_puct=None, n_playout=None, is_selfplay=False):
+        """
+        初始化MCTS玩家
+        :param policy_value_function: 策略价值函数
+        :param c_puct: 探索系数，如不指定则使用config
+        :param n_playout: 模拟次数，如不指定则使用config
+        :param is_selfplay: 是否是自我对弈模式
+        """
+        c_puct = c_puct if c_puct is not None else config.c_puct
+        n_playout = n_playout if n_playout is not None else config.n_playout
+        
         self.mcts = MCTS(policy_value_function, c_puct, n_playout)
         self._is_selfplay = is_selfplay
+        self.player = None
 
     def set_player_ind(self, p):
         self.player = p
@@ -144,18 +143,19 @@ class MCTSPlayer:
         if len(sensible_moves) > 0:
             acts, probs = self.mcts.get_move_probs(board, temp)
             move_probs[list(acts)] = probs
-
             if self._is_selfplay:
                 # 加入Dirichlet噪声，增强探索
                 move = np.random.choice(
                     acts,
-                    p=0.75 * probs + 0.25 * np.random.dirichlet(0.3 * np.ones(len(probs)))
+                    p=(1-config.dirichlet_weight) * probs + 
+                      config.dirichlet_weight * np.random.dirichlet(
+                        config.dirichlet_alpha * np.ones(len(probs))
+                    )
                 )
                 self.mcts.update_with_move(move)
             else:
                 move = np.random.choice(acts, p=probs)
                 self.mcts.update_with_move(-1)
-
             if return_prob:
                 return move, move_probs
             else:

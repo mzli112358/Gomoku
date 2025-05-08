@@ -1,25 +1,21 @@
-# -*- coding: utf-8 -*-
+# -_- coding: utf-8 -_-
 """
 纯蒙特卡洛树搜索实现（无神经网络）
-作者：Junxiao Song，中文注释整理
 """
-
 import numpy as np
 import copy
 from operator import itemgetter
-from config import config  # 添加在文件顶部
+from config import config
 
 def rollout_policy_fn(board):
     """随机模拟策略函数，用于快速蒙特卡洛模拟"""
     action_probs = np.random.rand(len(board.availables))
     return zip(board.availables, action_probs)
 
-
 def policy_value_fn(board):
     """纯MCTS使用均匀概率且不评估当前局面价值"""
     action_probs = np.ones(len(board.availables)) / len(board.availables)
     return zip(board.availables, action_probs), 0
-
 
 class TreeNode:
     """MCTS中的搜索树节点"""
@@ -63,15 +59,19 @@ class TreeNode:
     def is_root(self):
         return self._parent is None
 
-
 class MCTS:
     """纯MCTS算法"""
-
-    def __init__(self, policy_value_fn, c_puct=5, n_playout=1000):
+    def __init__(self, policy_value_fn, c_puct=None, n_playout=None):
+        """
+        初始化纯MCTS
+        :param policy_value_fn: 策略评估函数
+        :param c_puct: 探索系数，不指定则使用config
+        :param n_playout: 模拟次数，不指定则使用config.pure_mcts_playout_num
+        """
         self._root = TreeNode(None, 1.0)
         self._policy = policy_value_fn
-        self._c_puct = c_puct
-        self._n_playout = n_playout
+        self._c_puct = c_puct if c_puct is not None else config.c_puct
+        self._n_playout = n_playout if n_playout is not None else config.pure_mcts_playout_num
 
     def _playout(self, state):
         node = self._root
@@ -80,14 +80,11 @@ class MCTS:
                 break
             action, node = node.select(self._c_puct)
             state.do_move(action)
-
         action_probs, _ = self._policy(state)
         end, winner = state.game_end()
         if not end:
             node.expand(action_probs)
-
         leaf_value = self._evaluate_rollout(state)
-
         node.update_recursive(-leaf_value)
 
     def _evaluate_rollout(self, state, limit=1000):
@@ -120,18 +117,15 @@ class MCTS:
     def __str__(self):
         return "Pure MCTS"
 
-
-
-
 class MCTSPlayer:
-    def __init__(self, c_puct=5, n_playout=None):  # 修改参数为可选
+    def __init__(self, c_puct=None, n_playout=None):
         """
-        修改后的初始化方法：
-        - 优先使用传入的n_playout参数
-        - 未传入时自动使用config.pure_mcts_playout_num
+        初始化纯MCTS玩家
+        :param c_puct: 探索系数，不指定则使用config
+        :param n_playout: 模拟次数，不指定则使用config.pure_mcts_playout_num
         """
-        self.mcts = MCTS(policy_value_fn, 
-                        c_puct=c_puct,
+        self.mcts = MCTS(policy_value_fn,
+                        c_puct=c_puct if c_puct is not None else config.c_puct,
                         n_playout=n_playout if n_playout is not None else config.pure_mcts_playout_num)
         self.player = None
 

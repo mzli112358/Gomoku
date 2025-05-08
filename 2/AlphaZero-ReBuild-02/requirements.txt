@@ -1,8 +1,0 @@
-numpy
-torch>=1.10
-colorama
-matplotlib
-pandas
-nvidia-ml-py3
-psutil
-pynvml

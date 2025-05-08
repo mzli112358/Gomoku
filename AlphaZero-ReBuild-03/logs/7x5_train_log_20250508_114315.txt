@@ -1,0 +1,119 @@
+[2025-05-08 11:43:15,555] INFO: ==================================================
+[2025-05-08 11:43:15,555] INFO: 启动7x7五子棋训练 - 2025-05-08 11:43:15
+[2025-05-08 11:43:15,555] INFO: ==================================================
+[2025-05-08 11:43:15,555] INFO: 初始化训练流水线
+[2025-05-08 11:43:15,555] INFO: ==================================================
+[2025-05-08 11:43:15,555] INFO: 7x7 Gomoku 训练配置:
+[2025-05-08 11:43:15,555] INFO: ==================================================
+[2025-05-08 11:43:15,555] INFO: 硬件配置:
+[2025-05-08 11:43:15,555] INFO: - 使用GPU: 是
+[2025-05-08 11:43:15,555] INFO: - Worker数: 4
+[2025-05-08 11:43:15,555] INFO: 游戏规则:
+[2025-05-08 11:43:15,555] INFO: - 棋盘尺寸: 7x7
+[2025-05-08 11:43:15,555] INFO: - 连子获胜: 5子连珠
+[2025-05-08 11:43:15,555] INFO: 训练参数:
+[2025-05-08 11:43:15,555] INFO: - 学习率: 0.001, L2正则化: 0.0001
+[2025-05-08 11:43:15,555] INFO: - 批次大小: 1024, 训练轮数: 3
+[2025-05-08 11:43:15,555] INFO: - 自我对弈批次: 8, 经验池: 10000
+[2025-05-08 11:43:15,555] INFO: - 总训练批次: 1000
+[2025-05-08 11:43:15,555] INFO: MCTS参数:
+[2025-05-08 11:43:15,555] INFO: - 模拟次数: 400, 探索系数: 5
+[2025-05-08 11:43:15,555] INFO: - 温度参数: 1.0
+[2025-05-08 11:43:15,555] INFO: - Dirichlet噪声: α=0.3, 权重=0.25
+[2025-05-08 11:43:15,555] INFO: 评估参数:
+[2025-05-08 11:43:15,555] INFO: - 评估频率: 每50批次
+[2025-05-08 11:43:15,555] INFO: - 评估局数: 纯MCTS 14局, Minimax 3局, MinimaxAB 3局
+[2025-05-08 11:43:15,555] INFO: - 纯MCTS模拟次数: 600, Minimax深度: 2, MinimaxAB深度: 3
+[2025-05-08 11:43:15,555] INFO: - 早停耐心值: 8
+[2025-05-08 11:43:15,555] INFO: 模型存储:
+[2025-05-08 11:43:15,555] INFO: - 模型保存目录: D:\GitHub\Gomoku\AlphaZero-ReBuild-03\models
+[2025-05-08 11:43:15,555] INFO: - 最佳模型路径: D:\GitHub\Gomoku\AlphaZero-ReBuild-03\models\best_policy_7_7_5.model
+[2025-05-08 11:43:15,555] INFO: - 日志文件: D:\GitHub\Gomoku\AlphaZero-ReBuild-03\logs\7x5_train_log_20250508_114315.txt
+[2025-05-08 11:43:15,555] INFO: ==================================================
+[2025-05-08 11:43:16,538] INFO: 开始训练流程
+[2025-05-08 11:43:16,538] INFO: 初始化 8 个自我对弈线程
+[2025-05-08 11:43:16,538] INFO: 开始收集初始自我对弈数据...
+[2025-05-08 11:43:16,571] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,573] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:16,575] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,479] INFO: 训练批次: 1/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:18,495] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,495] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,497] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,497] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,499] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,500] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,500] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:18,500] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,383] INFO: 训练批次: 2/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:20,396] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,400] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,400] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,400] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,404] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,404] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,404] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:20,404] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,311] INFO: 训练批次: 3/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:22,324] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,324] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,328] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,328] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,328] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,332] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,332] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:22,332] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,236] INFO: 训练批次: 4/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:24,248] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,248] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,252] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,252] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,252] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,256] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,256] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:24,256] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,192] INFO: 训练批次: 5/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:26,213] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,215] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,215] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,217] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,217] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,221] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,221] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:26,221] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,120] INFO: 训练批次: 6/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:28,137] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,137] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,140] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,140] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,141] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,141] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,141] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:28,141] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,099] INFO: 训练批次: 7/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:30,111] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,111] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,116] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,116] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,116] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,120] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,120] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:30,120] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,043] INFO: 训练批次: 8/1000 | 对局长度: 0.0 | 数据集大小: 0
+[2025-05-08 11:43:32,059] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,059] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,059] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,059] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,063] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,063] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,063] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,063] ERROR: 自我对弈任务失败: cannot pickle '_queue.SimpleQueue' object
+[2025-05-08 11:43:32,803] INFO: 
+训练被中断
+[2025-05-08 11:43:32,807] INFO: 已保存中断时的模型到: D:\GitHub\Gomoku\AlphaZero-ReBuild-03\models\interrupted_1746675812.model
+[2025-05-08 11:43:32,807] INFO: 已清理资源，训练流程退出
