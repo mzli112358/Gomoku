@@ -1,0 +1,102 @@
+[2025-05-05 16:26:01,258] INFO: 开始训练...
+[2025-05-05 16:26:01,258] INFO: 初始化训练流水线
+[2025-05-05 16:26:41,155] INFO: 训练批次: 1, 当前对局长度: 42
+[2025-05-05 16:26:41,585] INFO: kl:0.00042, lr_multiplier:1.500, loss:4.8816, entropy:3.8906, explained_var_old:0.000, explained_var_new:0.014
+[2025-05-05 16:27:14,578] INFO: 训练批次: 2, 当前对局长度: 29
+[2025-05-05 16:27:14,752] INFO: kl:0.00812, lr_multiplier:2.250, loss:4.8483, entropy:3.8831, explained_var_old:0.009, explained_var_new:0.043
+[2025-05-05 16:27:47,724] INFO: 训练批次: 3, 当前对局长度: 25
+[2025-05-05 16:27:47,769] INFO: kl:0.00496, lr_multiplier:3.375, loss:4.7690, entropy:3.8830, explained_var_old:0.013, explained_var_new:0.155
+[2025-05-05 16:28:29,964] INFO: 训练批次: 4, 当前对局长度: 29
+[2025-05-05 16:28:30,073] INFO: kl:0.01623, lr_multiplier:3.375, loss:4.6069, entropy:3.8745, explained_var_old:0.090, explained_var_new:0.285
+[2025-05-05 16:29:06,180] INFO: 训练批次: 5, 当前对局长度: 29
+[2025-05-05 16:29:06,306] INFO: kl:0.00977, lr_multiplier:5.062, loss:4.3819, entropy:3.8717, explained_var_old:0.375, explained_var_new:0.514
+[2025-05-05 16:29:39,451] INFO: 训练批次: 6, 当前对局长度: 15
+[2025-05-05 16:29:39,600] INFO: kl:0.01426, lr_multiplier:5.062, loss:4.3710, entropy:3.8372, explained_var_old:0.435, explained_var_new:0.524
+[2025-05-05 16:30:11,774] INFO: 训练批次: 7, 当前对局长度: 25
+[2025-05-05 16:30:11,823] INFO: kl:0.01144, lr_multiplier:5.062, loss:4.3087, entropy:3.8263, explained_var_old:0.435, explained_var_new:0.557
+[2025-05-05 16:30:56,654] INFO: 训练批次: 8, 当前对局长度: 49
+[2025-05-05 16:30:56,793] INFO: kl:0.01112, lr_multiplier:5.062, loss:4.3748, entropy:3.8652, explained_var_old:0.326, explained_var_new:0.446
+[2025-05-05 16:31:17,429] INFO: 训练批次: 9, 当前对局长度: 20
+[2025-05-05 16:31:17,552] INFO: kl:0.01750, lr_multiplier:5.062, loss:4.5569, entropy:3.8401, explained_var_old:0.141, explained_var_new:0.266
+[2025-05-05 16:32:00,284] INFO: 训练批次: 10, 当前对局长度: 33
+[2025-05-05 16:32:00,418] INFO: kl:0.01450, lr_multiplier:5.062, loss:4.4641, entropy:3.8377, explained_var_old:0.256, explained_var_new:0.307
+[2025-05-05 16:32:16,478] INFO: 训练批次: 11, 当前对局长度: 18
+[2025-05-05 16:32:16,595] INFO: kl:0.02235, lr_multiplier:5.062, loss:4.4898, entropy:3.8103, explained_var_old:0.210, explained_var_new:0.299
+[2025-05-05 16:32:48,391] INFO: 训练批次: 12, 当前对局长度: 23
+[2025-05-05 16:32:48,523] INFO: kl:0.01532, lr_multiplier:5.062, loss:4.4358, entropy:3.8143, explained_var_old:0.262, explained_var_new:0.347
+[2025-05-05 16:33:15,109] INFO: 训练批次: 13, 当前对局长度: 20
+[2025-05-05 16:33:15,236] INFO: kl:0.02175, lr_multiplier:5.062, loss:4.3347, entropy:3.7204, explained_var_old:0.284, explained_var_new:0.405
+[2025-05-05 16:33:45,465] INFO: 训练批次: 14, 当前对局长度: 17
+[2025-05-05 16:33:45,588] INFO: kl:0.02387, lr_multiplier:5.062, loss:4.2974, entropy:3.7551, explained_var_old:0.348, explained_var_new:0.456
+[2025-05-05 16:34:11,599] INFO: 训练批次: 15, 当前对局长度: 24
+[2025-05-05 16:34:11,720] INFO: kl:0.03755, lr_multiplier:5.062, loss:4.3195, entropy:3.8002, explained_var_old:0.352, explained_var_new:0.434
+[2025-05-05 16:34:32,136] INFO: 训练批次: 16, 当前对局长度: 19
+[2025-05-05 16:34:32,262] INFO: kl:0.01495, lr_multiplier:5.062, loss:4.3210, entropy:3.7917, explained_var_old:0.263, explained_var_new:0.405
+[2025-05-05 16:35:02,880] INFO: 训练批次: 17, 当前对局长度: 29
+[2025-05-05 16:35:03,007] INFO: kl:0.00992, lr_multiplier:7.594, loss:4.2834, entropy:3.7331, explained_var_old:0.284, explained_var_new:0.424
+[2025-05-05 16:35:35,617] INFO: 训练批次: 18, 当前对局长度: 28
+[2025-05-05 16:35:35,744] INFO: kl:0.02603, lr_multiplier:7.594, loss:4.2711, entropy:3.7037, explained_var_old:0.246, explained_var_new:0.405
+[2025-05-05 16:36:11,403] INFO: 训练批次: 19, 当前对局长度: 37
+[2025-05-05 16:36:11,520] INFO: kl:0.03495, lr_multiplier:7.594, loss:4.2541, entropy:3.6668, explained_var_old:0.243, explained_var_new:0.405
+[2025-05-05 16:36:37,493] INFO: 训练批次: 20, 当前对局长度: 25
+[2025-05-05 16:36:37,626] INFO: kl:0.02074, lr_multiplier:7.594, loss:4.2507, entropy:3.6654, explained_var_old:0.236, explained_var_new:0.434
+[2025-05-05 16:37:13,245] INFO: 训练批次: 21, 当前对局长度: 34
+[2025-05-05 16:37:13,364] INFO: kl:0.03573, lr_multiplier:7.594, loss:4.2379, entropy:3.6784, explained_var_old:0.259, explained_var_new:0.423
+[2025-05-05 16:37:48,263] INFO: 训练批次: 22, 当前对局长度: 35
+[2025-05-05 16:37:48,398] INFO: kl:0.04907, lr_multiplier:5.062, loss:4.2265, entropy:3.6688, explained_var_old:0.247, explained_var_new:0.434
+[2025-05-05 16:38:23,938] INFO: 训练批次: 23, 当前对局长度: 24
+[2025-05-05 16:38:24,074] INFO: kl:0.03256, lr_multiplier:5.062, loss:4.2975, entropy:3.6416, explained_var_old:0.146, explained_var_new:0.323
+[2025-05-05 16:38:55,100] INFO: 训练批次: 24, 当前对局长度: 17
+[2025-05-05 16:38:55,143] INFO: kl:0.04451, lr_multiplier:3.375, loss:4.1433, entropy:3.5875, explained_var_old:0.299, explained_var_new:0.411
+[2025-05-05 16:39:28,855] INFO: 训练批次: 25, 当前对局长度: 31
+[2025-05-05 16:39:28,900] INFO: kl:0.03829, lr_multiplier:3.375, loss:4.2045, entropy:3.5559, explained_var_old:0.234, explained_var_new:0.321
+[2025-05-05 16:39:58,807] INFO: 训练批次: 26, 当前对局长度: 33
+[2025-05-05 16:39:58,958] INFO: kl:0.01550, lr_multiplier:3.375, loss:4.2181, entropy:3.5832, explained_var_old:0.256, explained_var_new:0.334
+[2025-05-05 16:40:23,655] INFO: 训练批次: 27, 当前对局长度: 17
+[2025-05-05 16:40:23,766] INFO: kl:0.02469, lr_multiplier:3.375, loss:4.1506, entropy:3.5796, explained_var_old:0.309, explained_var_new:0.392
+[2025-05-05 16:40:50,815] INFO: 训练批次: 28, 当前对局长度: 22
+[2025-05-05 16:40:50,862] INFO: kl:0.02136, lr_multiplier:3.375, loss:4.1507, entropy:3.5421, explained_var_old:0.284, explained_var_new:0.376
+[2025-05-05 16:41:29,261] INFO: 训练批次: 29, 当前对局长度: 25
+[2025-05-05 16:41:29,376] INFO: kl:0.01855, lr_multiplier:3.375, loss:4.0666, entropy:3.4985, explained_var_old:0.306, explained_var_new:0.386
+[2025-05-05 16:41:54,340] INFO: 训练批次: 30, 当前对局长度: 28
+[2025-05-05 16:41:54,451] INFO: kl:0.02708, lr_multiplier:3.375, loss:4.0911, entropy:3.5660, explained_var_old:0.297, explained_var_new:0.409
+[2025-05-05 16:42:30,784] INFO: 训练批次: 31, 当前对局长度: 25
+[2025-05-05 16:42:30,891] INFO: kl:0.03111, lr_multiplier:3.375, loss:4.0326, entropy:3.4956, explained_var_old:0.329, explained_var_new:0.435
+[2025-05-05 16:43:01,621] INFO: 训练批次: 32, 当前对局长度: 25
+[2025-05-05 16:43:01,660] INFO: kl:0.03010, lr_multiplier:3.375, loss:4.0824, entropy:3.4802, explained_var_old:0.259, explained_var_new:0.393
+[2025-05-05 16:43:55,298] INFO: 训练批次: 33, 当前对局长度: 34
+[2025-05-05 16:43:55,351] INFO: kl:0.03485, lr_multiplier:3.375, loss:4.0690, entropy:3.5295, explained_var_old:0.234, explained_var_new:0.359
+[2025-05-05 16:44:24,822] INFO: 训练批次: 34, 当前对局长度: 27
+[2025-05-05 16:44:24,864] INFO: kl:0.05266, lr_multiplier:2.250, loss:4.0113, entropy:3.4425, explained_var_old:0.280, explained_var_new:0.405
+[2025-05-05 16:45:01,467] INFO: 训练批次: 35, 当前对局长度: 25
+[2025-05-05 16:45:01,497] INFO: kl:0.03531, lr_multiplier:2.250, loss:4.0589, entropy:3.4545, explained_var_old:0.251, explained_var_new:0.349
+[2025-05-05 16:45:32,069] INFO: 训练批次: 36, 当前对局长度: 13
+[2025-05-05 16:45:32,109] INFO: kl:0.02632, lr_multiplier:2.250, loss:4.0154, entropy:3.4269, explained_var_old:0.248, explained_var_new:0.328
+[2025-05-05 16:45:54,725] INFO: 训练批次: 37, 当前对局长度: 15
+[2025-05-05 16:45:54,860] INFO: kl:0.02649, lr_multiplier:2.250, loss:3.9910, entropy:3.3520, explained_var_old:0.261, explained_var_new:0.359
+[2025-05-05 16:46:36,901] INFO: 训练批次: 38, 当前对局长度: 27
+[2025-05-05 16:46:37,039] INFO: kl:0.03896, lr_multiplier:2.250, loss:3.9427, entropy:3.4105, explained_var_old:0.336, explained_var_new:0.412
+[2025-05-05 16:47:03,393] INFO: 训练批次: 39, 当前对局长度: 13
+[2025-05-05 16:47:03,519] INFO: kl:0.04033, lr_multiplier:1.500, loss:3.9694, entropy:3.3502, explained_var_old:0.299, explained_var_new:0.368
+[2025-05-05 16:47:45,276] INFO: 训练批次: 40, 当前对局长度: 32
+[2025-05-05 16:47:45,400] INFO: kl:0.03386, lr_multiplier:1.500, loss:4.0078, entropy:3.3123, explained_var_old:0.217, explained_var_new:0.290
+[2025-05-05 16:48:25,455] INFO: 训练批次: 41, 当前对局长度: 33
+[2025-05-05 16:48:25,496] INFO: kl:0.02290, lr_multiplier:1.500, loss:3.9925, entropy:3.3608, explained_var_old:0.244, explained_var_new:0.335
+[2025-05-05 16:49:04,213] INFO: 训练批次: 42, 当前对局长度: 23
+[2025-05-05 16:49:04,334] INFO: kl:0.01914, lr_multiplier:1.500, loss:3.9103, entropy:3.3705, explained_var_old:0.313, explained_var_new:0.392
+[2025-05-05 16:49:30,691] INFO: 训练批次: 43, 当前对局长度: 15
+[2025-05-05 16:49:30,813] INFO: kl:0.02054, lr_multiplier:1.500, loss:3.9475, entropy:3.3507, explained_var_old:0.312, explained_var_new:0.366
+[2025-05-05 16:49:52,431] INFO: 训练批次: 44, 当前对局长度: 17
+[2025-05-05 16:49:52,567] INFO: kl:0.02248, lr_multiplier:1.500, loss:3.8955, entropy:3.3184, explained_var_old:0.326, explained_var_new:0.396
+[2025-05-05 16:50:30,975] INFO: 训练批次: 45, 当前对局长度: 20
+[2025-05-05 16:50:31,097] INFO: kl:0.02568, lr_multiplier:1.500, loss:3.9081, entropy:3.3179, explained_var_old:0.298, explained_var_new:0.346
+[2025-05-05 16:50:59,811] INFO: 训练批次: 46, 当前对局长度: 32
+[2025-05-05 16:50:59,921] INFO: kl:0.02347, lr_multiplier:1.500, loss:3.8546, entropy:3.2983, explained_var_old:0.306, explained_var_new:0.402
+[2025-05-05 16:51:18,163] INFO: 训练批次: 47, 当前对局长度: 14
+[2025-05-05 16:51:18,280] INFO: kl:0.01832, lr_multiplier:1.500, loss:3.9236, entropy:3.2995, explained_var_old:0.296, explained_var_new:0.369
+[2025-05-05 16:52:05,272] INFO: 训练批次: 48, 当前对局长度: 39
+[2025-05-05 16:52:05,304] INFO: kl:0.02713, lr_multiplier:1.500, loss:3.8078, entropy:3.2630, explained_var_old:0.298, explained_var_new:0.355
+[2025-05-05 16:52:48,861] INFO: 训练批次: 49, 当前对局长度: 26
+[2025-05-05 16:52:48,910] INFO: kl:0.02499, lr_multiplier:1.500, loss:3.7544, entropy:3.1898, explained_var_old:0.363, explained_var_new:0.427
+[2025-05-05 16:53:22,745] INFO: 训练批次: 50, 当前对局长度: 22
+[2025-05-05 16:53:22,798] INFO: kl:0.02317, lr_multiplier:1.500, loss:3.8301, entropy:3.1934, explained_var_old:0.256, explained_var_new:0.328

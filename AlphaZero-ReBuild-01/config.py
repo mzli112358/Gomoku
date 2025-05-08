@@ -16,9 +16,9 @@ class Config:
         self.use_gpu = torch.cuda.is_available()
 
         # 游戏相关配置
-        self.board_width = 6      # 棋盘宽度
-        self.board_height = 6     # 棋盘高度
-        self.n_in_row = 4         # 连多少子获胜
+        self.board_width = 7      # 棋盘宽度
+        self.board_height = 7     # 棋盘高度
+        self.n_in_row = 5         # 连多少子获胜
 
         # 神经网络相关配置
         self.lr = 2e-3            # 学习率
