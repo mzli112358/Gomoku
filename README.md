@@ -1,19 +1,13 @@
-# ML Proj
+# Machine Learning Project
 `DS4023_Machine Learning Project.pdf`
 
-Nicolas班有5个simple，simple2是井字棋，AlphaZero是很经典的棋盘神经网络，可以用来做五子棋。
 
 ```
-AlphaZero-GeneratedByDeepseek # 正在训练模型
-AlphaZero-OpenSource # 开源的，没运行，为什么没运行
-minimax-traditional AI # minimax算法，传统AI，没有用神经网络
-NicolasSimple # 五个Simple，其中一个是井字棋
-```
-
-## 其他参考资料，与这个仓库无关
-```
-另一个人的开源
-https://gitcode.com/gh_mirrors/ti/Tic-Tac-Toe-AI
-他的个人页说明
-https://mostafa-samir.github.io/Tic-Tac-Toe-AI/
+AlphaZero-宋俊晓开源 # 开源版本，抓取下来的，留着备份
+AlphaZero-ReBuild-01 # 重建开源项目后的第一版，与前一版有xx区别修改，有xx提升，有xx不足
+AlphaZero-ReBuild-02 # 重建后的第二版，与前一版有xx区别修改，有xx提升，有xx不足
+AlphaZero-ReBuild-03 # 重建后的第三版，与前一版有xx区别修改，有xx提升，有xx不足
+AlphaZero-ReBuild-cpu # （算是第04版）禁用GPU训练，与前一版有xx区别修改，有xx提升，有xx不足
+(traditional AI) minimax # 纯minimax算法，好像跟这个项目没什么关系
+DS4023_Machine Learning Project.pdf # 项目要求
 ```
