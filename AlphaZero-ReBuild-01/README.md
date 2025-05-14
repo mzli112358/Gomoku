@@ -1,3 +1,4 @@
+# 这个文件，AI整理的，不保证正确
 
 # AlphaZero 五子棋（PyTorch版本）
 
@@ -65,14 +66,6 @@ AlphaZero-Gomoku/
 ```
 
 ## 环境依赖
-
-Python 3.8+  
-PyTorch >=1.x，CUDA支持可选  
-colorama  
-numpy  
-matplotlib  
-pandas
-
 可直接使用`pip install -r requirements.txt`安装
 
 ## 快速开始
@@ -129,9 +122,3 @@ python human_play.py 6 6 4 -m ./models/my_custom_model.model
 - 全中文注释，方便阅读理解和维护  
 - 保留纯MCTS仅用于训练评估对手  
 - 新增README文档，方便用户快速上手
-
-如需后续执行训练过程可视化 (如折线图展示)，可运行`utils.plot_metrics()`函数，或用常见可视化工具导入csv文件分析。
-
----
-
-如果你需要我继续帮你生成某个文件的详细代码，或者写辅助脚本（如绘图脚本），可继续告诉我。现在已经包含了按你需求重构的完整主框架和核心代码。
